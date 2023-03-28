@@ -1,0 +1,6 @@
+flask
+pymongo[srv]
+python-dotenv
+jurigged
+openpyxl
+flask-cors

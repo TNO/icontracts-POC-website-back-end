@@ -1,0 +1,921 @@
+      @prefix dc: <http://purl.org/dc/elements/1.1/> .
+      @prefix owl: <http://www.w3.org/2002/07/owl#> .
+      @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+      @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+      @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+      @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+      @prefix dcterms: <http://purl.org/dc/terms/> .
+      @prefix onassis: <http://ontology.tno.nl/onassis#> .
+      @prefix risk: <http://ontology.tno.nl/onassis/RiskManagement#> .
+      @prefix ex: <http://ontology.tno.nl/onassis/data#> .
+
+      ex:890 rdf:type onassis:Contract . 
+      ex:890 onassis:contractID “undefined"^^rdfs:Literal .             
+
+      ex:890 onassis:involvesScope ex:5678 . 
+      ex:5678 rdf:type onassis:Scope . 
+      ex:5678 onassis:NaturalLanguageExpression “Freelance Agreement"^^rdfs:Literal .
+
+      ex:890 onassis:AgreementInContract ex:56789 . 
+      ex:56789 rdf:type onassis:Agreement . 
+
+      #connect contract to sections paragraphs and variables
+      ex:890 onassis:isRelatedTo ex:9000 .
+      ex:890 onassis:isRelatedTo ex:9001 .
+      ex:890 onassis:isRelatedTo ex:9002 .
+      ex:890 onassis:isRelatedTo ex:9003 .
+      
+      ex:123 rdf:type onassis:Signature .
+      ex:123 onassis:signatureOnContract ex:890 .
+
+      ex:1 rdf:type onassis:Contractor . 
+      ex:1 foaf:name “contractorName1 "^^rdfs:Literal .
+      ex:1 onassis:NaturalLanguageExpression “client"^^rdfs:Literal .
+      ex:56789 onassis:involvesParties ex:1 . 
+      ex:1 onassis:selectsScope ex:5678 .
+      ex:123 onassis:signatureBelongingTo ex:1
+      
+
+      ex:2 rdf:type onassis:Contractor . 
+      ex:2 foaf:name “contractorName"^^rdfs:Literal .
+      ex:2 onassis:NaturalLanguageExpression “freelancer"^^rdfs:Literal .
+      ex:56789 onassis:involvesParties ex:2 . 
+      ex:1 onassis:selectsScope ex:5678 .
+      ex:123 signatureBelongingTo ex:2
+
+      ex:3 rdf:type onassis:LegalExpert . 
+      ex:3 foaf:name “LegalPersonName"^^rdfs:Literal .
+      ex:56789 onassis:involvesParties ex:3 . 
+      #defines contract
+      ex:3 onassis:defines ex:890 .
+      #defines scope
+      ex:3 onassis:defines ex:5678 .        
+
+      
+      ex:14 onassis:hasVariableExpression ex:141 .
+      ex:141 rdf:type onassis:VariableExpression . 
+      ex:141 onassis:NaturalLanguageExpression “Draft design selection,1st Draft delivery"^^rdfs:Literal . 
+      
+      ex:15 onassis:hasVariableExpression ex:151 .
+      ex:151 rdf:type onassis:VariableExpression . 
+      ex:151 onassis:NaturalLanguageExpression “Milestone payment"^^rdfs:Literal .       
+
+      ex:16 onassis:hasVariableExpression ex:161 .
+      ex:161 rdf:type onassis:VariableExpression . 
+      ex:161 onassis:NaturalLanguageExpression “2500-3000"^^rdfs:Literal .       
+
+      ex:17 onassis:hasVariableExpression ex:171 .
+      ex:171 rdf:type onassis:VariableExpression . 
+      ex:171 onassis:NaturalLanguageExpression “Cash"^^rdfs:Literal .       
+
+      
+      #milestones question + answer
+      ex:140 rdf:type onassis:Question .
+      ex:140 onassis:NaturalLanguageExpression “What is your preferred milestone plan?"^^rdfs:Literal .
+      ex:1 onassis:replies ex:140 .
+      ex:2 onassis:replies ex:140 .
+      ex:3 onassis:writes ex:140 .
+      ex:56789 onassis:agreementInvolvedIn ex:140 .     
+      ex:140 onassis:hasAnswer ex:142 .
+      ex:140 onassis:hasAnswer ex:143 .
+
+      ex:142 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:142 . 
+      ex:142 onassis:answerContainedIn ex:141
+      ex:142 onassis:answerProvidedBy ex:1
+      ex:142 onassis:NaturalLanguageExpression “Information gathering,Draft design selection"^^rdfs:Literal .
+
+      ex:143 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:143 . 
+      ex:143 onassis:answerContainedIn ex:141
+      ex:143 onassis:answerProvidedBy ex:2
+      ex:143 onassis:NaturalLanguageExpression “Draft design selection,1st Draft delivery"^^rdfs:Literal .
+
+      #deadlines(payment_schedule) question + answer
+      ex:150 rdf:type onassis:Question .
+      ex:150 onassis:NaturalLanguageExpression “What is your preferred payment schedule?"^^rdfs:Literal .
+      ex:1 onassis:replies ex:150 .
+      ex:2 onassis:replies ex:150 .
+      ex:3 onassis:writes ex:150 .
+      ex:56789 onassis:agreementInvolvedIn ex:150 .     
+      ex:150 onassis:hasAnswer ex:152 .
+      ex:150 onassis:hasAnswer ex:153 .
+
+      ex:152 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:152 . 
+      ex:152 onassis:answerContainedIn ex:151
+      ex:152 onassis:answerProvidedBy ex:1
+      ex:152 onassis:NaturalLanguageExpression “Milestone payment"^^rdfs:Literal .
+
+      ex:153 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:153 . 
+      ex:153 onassis:answerContainedIn ex:151
+      ex:153 onassis:answerProvidedBy ex:2
+      ex:153 onassis:NaturalLanguageExpression “Final payment"^^rdfs:Literal .
+
+      #amount(price) question + answer
+      ex:160 rdf:type onassis:Question .
+      ex:160 onassis:NaturalLanguageExpression “What is your budget for this project?"^^rdfs:Literal .
+      ex:1 onassis:replies ex:160 .
+      ex:2 onassis:replies ex:160 .
+      ex:3 onassis:writes ex:160 .
+      ex:56789 onassis:agreementInvolvedIn ex:160 .     
+      ex:160 onassis:hasAnswer ex:162 .
+      ex:160 onassis:hasAnswer ex:163 .
+
+      ex:162 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:162 . 
+      ex:162 onassis:answerContainedIn ex:161
+      ex:162 onassis:answerProvidedBy ex:1
+      ex:162 onassis:NaturalLanguageExpression “2500-3000"^^rdfs:Literal .
+
+      ex:163 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:163 . 
+      ex:163 onassis:answerContainedIn ex:161
+      ex:163 onassis:answerProvidedBy ex:2
+      ex:163 onassis:NaturalLanguageExpression “2500-3000"^^rdfs:Literal .
+
+      #x(payment_method) question + answer
+      ex:170 rdf:type onassis:Question .
+      ex:170 onassis:NaturalLanguageExpression “What is your preferred payment method?"^^rdfs:Literal .
+      ex:1 onassis:replies ex:170 .
+      ex:2 onassis:replies ex:170 .
+      ex:3 onassis:writes ex:170 .
+      ex:56789 onassis:agreementInvolvedIn ex:170 .     
+      ex:170 onassis:hasAnswer ex:172 .
+      ex:170 onassis:hasAnswer ex:173 .
+
+      ex:172 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:172 . 
+      ex:172 onassis:answerContainedIn ex:171
+      ex:172 onassis:answerProvidedBy ex:1
+      ex:172 onassis:NaturalLanguageExpression “Cash"^^rdfs:Literal .
+
+      ex:173 rdf:type onassis:Answer .
+      ex:56789 onassis:agreementInvolvedIn ex:173 . 
+      ex:173 onassis:answerContainedIn ex:171
+      ex:173 onassis:answerProvidedBy ex:2
+      ex:173 onassis:NaturalLanguageExpression “Bitcoin"^^rdfs:Literal .
+
+      
+
+        #additional question + answer
+        ex:1800 rdf:type onassis:Question .
+        ex:1800 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1800 .
+        ex:3 onassis:writes ex:1800 .
+        ex:56789 onassis:agreementInvolvedIn ex:1800 .     
+        ex:1800 onassis:hasAnswer ex:1801 .
+
+        ex:1801 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1801 . 
+        ex:1801 onassis:NaturalLanguageExpression “ no tienk"^^rdfs:Literal .
+        ex:1801 onassis:answerProvidedBy ex:2 . 
+          ex:2 onassis:replies ex:1800 .
+          
+
+        #additional question + answer
+        ex:1801 rdf:type onassis:Question .
+        ex:1801 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1801 .
+        ex:3 onassis:writes ex:1801 .
+        ex:56789 onassis:agreementInvolvedIn ex:1801 .     
+        ex:1801 onassis:hasAnswer ex:1802 .
+
+        ex:1802 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1802 . 
+        ex:1802 onassis:NaturalLanguageExpression “undefined"^^rdfs:Literal .
+        ex:1802 onassis:answerProvidedBy ex:2 . 
+          ex:2 onassis:replies ex:1801 .
+          
+
+        #additional question + answer
+        ex:1802 rdf:type onassis:Question .
+        ex:1802 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1802 .
+        ex:3 onassis:writes ex:1802 .
+        ex:56789 onassis:agreementInvolvedIn ex:1802 .     
+        ex:1802 onassis:hasAnswer ex:1803 .
+
+        ex:1803 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1803 . 
+        ex:1803 onassis:NaturalLanguageExpression “best"^^rdfs:Literal .
+        ex:1803 onassis:answerProvidedBy ex:1 . 
+          ex:1 onassis:replies ex:1802 .
+          
+
+        #additional question + answer
+        ex:1803 rdf:type onassis:Question .
+        ex:1803 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1803 .
+        ex:3 onassis:writes ex:1803 .
+        ex:56789 onassis:agreementInvolvedIn ex:1803 .     
+        ex:1803 onassis:hasAnswer ex:1804 .
+
+        ex:1804 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1804 . 
+        ex:1804 onassis:NaturalLanguageExpression “YAAAA"^^rdfs:Literal .
+        ex:1804 onassis:answerProvidedBy ex:2 . 
+          ex:2 onassis:replies ex:1803 .
+          
+
+        #additional question + answer
+        ex:1804 rdf:type onassis:Question .
+        ex:1804 onassis:NaturalLanguageExpression “test "^^rdfs:Literal .
+        ex:2 onassis:replies ex:1804 .
+        ex:3 onassis:writes ex:1804 .
+        ex:56789 onassis:agreementInvolvedIn ex:1804 .     
+        ex:1804 onassis:hasAnswer ex:1805 .
+
+        ex:1805 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1805 . 
+        ex:1805 onassis:NaturalLanguageExpression “yes"^^rdfs:Literal .
+        ex:1805 onassis:answerProvidedBy ex:1 . 
+          ex:1 onassis:replies ex:1804 .
+          
+
+        #additional question + answer
+        ex:1805 rdf:type onassis:Question .
+        ex:1805 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1805 .
+        ex:3 onassis:writes ex:1805 .
+        ex:56789 onassis:agreementInvolvedIn ex:1805 .     
+        ex:1805 onassis:hasAnswer ex:1806 .
+
+        ex:1806 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1806 . 
+        ex:1806 onassis:NaturalLanguageExpression “nothienk"^^rdfs:Literal .
+        ex:1806 onassis:answerProvidedBy ex:1 . 
+          ex:1 onassis:replies ex:1805 .
+          
+
+        #additional question + answer
+        ex:1806 rdf:type onassis:Question .
+        ex:1806 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
+        ex:2 onassis:replies ex:1806 .
+        ex:3 onassis:writes ex:1806 .
+        ex:56789 onassis:agreementInvolvedIn ex:1806 .     
+        ex:1806 onassis:hasAnswer ex:1807 .
+
+        ex:1807 rdf:type onassis:Answer .
+        ex:56789 onassis:agreementInvolvedIn ex:1807 . 
+        ex:1807 onassis:NaturalLanguageExpression “Neee!"^^rdfs:Literal .
+        ex:1807 onassis:answerProvidedBy ex:1 . 
+          ex:1 onassis:replies ex:1806 .
+          
+        ex:2500 rdf:type onassis:Risk
+        ex:2500 onassis:NaturalLanguageExpression “budget"^^rdfs:Literal .
+        ex:2500 risk:involvesHazardousEvent ex:2501 .
+        ex:3 onassis:defines ex:2500 .
+        ex:890 onassis:hasRisk ex:2500 .
+        ex:56789 onassis:hasRisk ex:2500 .
+
+        ex:2501 rdf:type risk:HazardousEvent .
+        ex:2501 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
+        ex:2501 risk:hasProbability ex:2505 .
+        ex:2501 risk:hasImpact ex:2503 .
+        
+        ex:2502 rdf:type risk:Source .
+        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2503 rdf:type risk:Impact .
+        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2503 risk:resultInLevelOfRisk ex:2504 .
+        ex:2503 risk:basedOnSource ex:2502 .
+        ex:2503 risk:affects ex:1
+          ex:2503 risk:affects ex:2
+        
+        ex:2504 rdf:type risk:LevelOfRisk .
+        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2504 risk:isInvolvedInRisk ex:2500 .
+        
+        ex:2505 rdf:type risk:Probability .
+        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2505 risk:resultInLevelOfRisk ex:2504 .
+        ex:2505 risk:basedOnSource ex:2502 .
+        
+          ex:2507 rdf:type risk:Cause .
+          ex:2507 onassis:NaturalLanguageExpression “lack of budget"^^rdfs:Literal .
+          ex:2501 risk:hasCause ex:2507 .
+          ex:2509 risk:containedByReactiveControl ex:2508 .
+
+          ex:2508 rdf:type risk:ProactiveControl .
+          ex:2508 onassis:NaturalLanguageExpression “budget screenshot"^^rdfs:Literal .
+          ex:2501 risk:hasProactiveControl ex:2508 .
+          
+          ex:2511 rdf:type risk:Consequence .
+          ex:2511 onassis:NaturalLanguageExpression “less work, less money"^^rdfs:Literal .
+          ex:2501 risk:hasConsequence ex:2511 .
+          ex:2511 risk:containedByReactiveControl ex:2512 .
+
+          ex:2512 rdf:type risk:ReactiveControl .
+          ex:2512 onassis:NaturalLanguageExpression “stop services"^^rdfs:Literal .
+          ex:2501 risk:hasReactiveControl ex:2512 .
+          
+        ex:2506 rdf:type onassis:Risk
+        ex:2506 onassis:NaturalLanguageExpression “payment"^^rdfs:Literal .
+        ex:2506 risk:involvesHazardousEvent ex:2507 .
+        ex:3 onassis:defines ex:2506 .
+        ex:890 onassis:hasRisk ex:2506 .
+        ex:56789 onassis:hasRisk ex:2506 .
+
+        ex:2507 rdf:type risk:HazardousEvent .
+        ex:2507 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
+        ex:2507 risk:hasProbability ex:2511 .
+        ex:2507 risk:hasImpact ex:2509 .
+        
+        ex:2508 rdf:type risk:Source .
+        ex:2507 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2509 rdf:type risk:Impact .
+        ex:2507 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2509 risk:resultInLevelOfRisk ex:2510 .
+        ex:2509 risk:basedOnSource ex:2508 .
+        ex:2509 risk:affects ex:2
+        
+        ex:2510 rdf:type risk:LevelOfRisk .
+        ex:2507 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2510 risk:isInvolvedInRisk ex:2506 .
+        
+        ex:2511 rdf:type risk:Probability .
+        ex:2507 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2511 risk:resultInLevelOfRisk ex:2510 .
+        ex:2511 risk:basedOnSource ex:2508 .
+        
+          ex:2513 rdf:type risk:Cause .
+          ex:2513 onassis:NaturalLanguageExpression “payment default"^^rdfs:Literal .
+          ex:2507 risk:hasCause ex:2513 .
+          ex:2515 risk:containedByReactiveControl ex:2514 .
+
+          ex:2514 rdf:type risk:ProactiveControl .
+          ex:2514 onassis:NaturalLanguageExpression “payment plan"^^rdfs:Literal .
+          ex:2507 risk:hasProactiveControl ex:2514 .
+          
+          ex:2517 rdf:type risk:Consequence .
+          ex:2517 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+          ex:2507 risk:hasConsequence ex:2517 .
+          ex:2517 risk:containedByReactiveControl ex:2518 .
+
+          ex:2518 rdf:type risk:ReactiveControl .
+          ex:2518 onassis:NaturalLanguageExpression “pause services"^^rdfs:Literal .
+          ex:2507 risk:hasReactiveControl ex:2518 .
+          
+        ex:2512 rdf:type onassis:Risk
+        ex:2512 onassis:NaturalLanguageExpression “quality"^^rdfs:Literal .
+        ex:2512 risk:involvesHazardousEvent ex:2513 .
+        ex:3 onassis:defines ex:2512 .
+        ex:890 onassis:hasRisk ex:2512 .
+        ex:56789 onassis:hasRisk ex:2512 .
+
+        ex:2513 rdf:type risk:HazardousEvent .
+        ex:2513 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
+        ex:2513 risk:hasProbability ex:2517 .
+        ex:2513 risk:hasImpact ex:2515 .
+        
+        ex:2514 rdf:type risk:Source .
+        ex:2513 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2515 rdf:type risk:Impact .
+        ex:2513 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2515 risk:resultInLevelOfRisk ex:2516 .
+        ex:2515 risk:basedOnSource ex:2514 .
+        ex:2515 risk:affects ex:1
+          ex:2515 risk:affects ex:2
+        
+        ex:2516 rdf:type risk:LevelOfRisk .
+        ex:2513 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2516 risk:isInvolvedInRisk ex:2512 .
+        
+        ex:2517 rdf:type risk:Probability .
+        ex:2513 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2517 risk:resultInLevelOfRisk ex:2516 .
+        ex:2517 risk:basedOnSource ex:2514 .
+        
+          ex:2519 rdf:type risk:Cause .
+          ex:2519 onassis:NaturalLanguageExpression “quality objection"^^rdfs:Literal .
+          ex:2513 risk:hasCause ex:2519 .
+          ex:2521 risk:containedByReactiveControl ex:2520 .
+
+          ex:2520 rdf:type risk:ProactiveControl .
+          ex:2520 onassis:NaturalLanguageExpression “quality control check"^^rdfs:Literal .
+          ex:2513 risk:hasProactiveControl ex:2520 .
+          
+          ex:2523 rdf:type risk:Consequence .
+          ex:2523 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+          ex:2513 risk:hasConsequence ex:2523 .
+          ex:2523 risk:containedByReactiveControl ex:2524 .
+
+          ex:2524 rdf:type risk:ReactiveControl .
+          ex:2524 onassis:NaturalLanguageExpression “pause services"^^rdfs:Literal .
+          ex:2513 risk:hasReactiveControl ex:2524 .
+          
+        ex:2518 rdf:type onassis:Risk
+        ex:2518 onassis:NaturalLanguageExpression “deadline"^^rdfs:Literal .
+        ex:2518 risk:involvesHazardousEvent ex:2519 .
+        ex:3 onassis:defines ex:2518 .
+        ex:890 onassis:hasRisk ex:2518 .
+        ex:56789 onassis:hasRisk ex:2518 .
+
+        ex:2519 rdf:type risk:HazardousEvent .
+        ex:2519 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
+        ex:2519 risk:hasProbability ex:2523 .
+        ex:2519 risk:hasImpact ex:2521 .
+        
+        ex:2520 rdf:type risk:Source .
+        ex:2519 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2521 rdf:type risk:Impact .
+        ex:2519 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2521 risk:resultInLevelOfRisk ex:2522 .
+        ex:2521 risk:basedOnSource ex:2520 .
+        ex:2521 risk:affects ex:2
+        
+        ex:2522 rdf:type risk:LevelOfRisk .
+        ex:2519 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2522 risk:isInvolvedInRisk ex:2518 .
+        
+        ex:2523 rdf:type risk:Probability .
+        ex:2519 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2523 risk:resultInLevelOfRisk ex:2522 .
+        ex:2523 risk:basedOnSource ex:2520 .
+        
+          ex:2525 rdf:type risk:Cause .
+          ex:2525 onassis:NaturalLanguageExpression “lack of deadline"^^rdfs:Literal .
+          ex:2519 risk:hasCause ex:2525 .
+          ex:2527 risk:containedByReactiveControl ex:2526 .
+
+          ex:2526 rdf:type risk:ProactiveControl .
+          ex:2526 onassis:NaturalLanguageExpression “timeline"^^rdfs:Literal .
+          ex:2519 risk:hasProactiveControl ex:2526 .
+          
+          ex:2529 rdf:type risk:Consequence .
+          ex:2529 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+          ex:2519 risk:hasConsequence ex:2529 .
+          ex:2529 risk:containedByReactiveControl ex:2530 .
+
+          ex:2530 rdf:type risk:ReactiveControl .
+          ex:2530 onassis:NaturalLanguageExpression “pause services"^^rdfs:Literal .
+          ex:2519 risk:hasReactiveControl ex:2530 .
+          
+        ex:2524 rdf:type onassis:Risk
+        ex:2524 onassis:NaturalLanguageExpression “delivery delay"^^rdfs:Literal .
+        ex:2524 risk:involvesHazardousEvent ex:2525 .
+        ex:3 onassis:defines ex:2524 .
+        ex:890 onassis:hasRisk ex:2524 .
+        ex:56789 onassis:hasRisk ex:2524 .
+
+        ex:2525 rdf:type risk:HazardousEvent .
+        ex:2525 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
+        ex:2525 risk:hasProbability ex:2529 .
+        ex:2525 risk:hasImpact ex:2527 .
+        
+        ex:2526 rdf:type risk:Source .
+        ex:2525 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2527 rdf:type risk:Impact .
+        ex:2525 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2527 risk:resultInLevelOfRisk ex:2528 .
+        ex:2527 risk:basedOnSource ex:2526 .
+        ex:2527 risk:affects ex:1
+        
+        ex:2528 rdf:type risk:LevelOfRisk .
+        ex:2525 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2528 risk:isInvolvedInRisk ex:2524 .
+        
+        ex:2529 rdf:type risk:Probability .
+        ex:2525 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2529 risk:resultInLevelOfRisk ex:2528 .
+        ex:2529 risk:basedOnSource ex:2526 .
+        
+          ex:2531 rdf:type risk:Cause .
+          ex:2531 onassis:NaturalLanguageExpression “delayed delivery"^^rdfs:Literal .
+          ex:2525 risk:hasCause ex:2531 .
+          ex:2533 risk:containedByReactiveControl ex:2532 .
+
+          ex:2532 rdf:type risk:ProactiveControl .
+          ex:2532 onassis:NaturalLanguageExpression “consistent contract"^^rdfs:Literal .
+          ex:2525 risk:hasProactiveControl ex:2532 .
+          
+          ex:2535 rdf:type risk:Consequence .
+          ex:2535 onassis:NaturalLanguageExpression “distribution of costs"^^rdfs:Literal .
+          ex:2525 risk:hasConsequence ex:2535 .
+          ex:2535 risk:containedByReactiveControl ex:2536 .
+
+          ex:2536 rdf:type risk:ReactiveControl .
+          ex:2536 onassis:NaturalLanguageExpression “increase contact after delay for limited time"^^rdfs:Literal .
+          ex:2525 risk:hasReactiveControl ex:2536 .
+          
+          ex:2537 rdf:type risk:Consequence .
+          ex:2537 onassis:NaturalLanguageExpression “seller reduced payment"^^rdfs:Literal .
+          ex:2525 risk:hasConsequence ex:2537 .
+          ex:2537 risk:containedByReactiveControl ex:2538 .
+
+          ex:2538 rdf:type risk:ReactiveControl .
+          ex:2538 onassis:NaturalLanguageExpression “seller fine due to responsibility"^^rdfs:Literal .
+          ex:2525 risk:hasReactiveControl ex:2538 .
+          
+        ex:2532 rdf:type onassis:Risk
+        ex:2532 onassis:NaturalLanguageExpression “information delay"^^rdfs:Literal .
+        ex:2532 risk:involvesHazardousEvent ex:2533 .
+        ex:3 onassis:defines ex:2532 .
+        ex:890 onassis:hasRisk ex:2532 .
+        ex:56789 onassis:hasRisk ex:2532 .
+
+        ex:2533 rdf:type risk:HazardousEvent .
+        ex:2533 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
+        ex:2533 risk:hasProbability ex:2537 .
+        ex:2533 risk:hasImpact ex:2535 .
+        
+        ex:2534 rdf:type risk:Source .
+        ex:2533 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2535 rdf:type risk:Impact .
+        ex:2533 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2535 risk:resultInLevelOfRisk ex:2536 .
+        ex:2535 risk:basedOnSource ex:2534 .
+        ex:2535 risk:affects ex:2
+        
+        ex:2536 rdf:type risk:LevelOfRisk .
+        ex:2533 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2536 risk:isInvolvedInRisk ex:2532 .
+        
+        ex:2537 rdf:type risk:Probability .
+        ex:2533 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2537 risk:resultInLevelOfRisk ex:2536 .
+        ex:2537 risk:basedOnSource ex:2534 .
+        
+          ex:2539 rdf:type risk:Cause .
+          ex:2539 onassis:NaturalLanguageExpression “delayed information provision"^^rdfs:Literal .
+          ex:2533 risk:hasCause ex:2539 .
+          ex:2541 risk:containedByReactiveControl ex:2540 .
+
+          ex:2540 rdf:type risk:ProactiveControl .
+          ex:2540 onassis:NaturalLanguageExpression “strict deadline"^^rdfs:Literal .
+          ex:2533 risk:hasProactiveControl ex:2540 .
+          
+          ex:2543 rdf:type risk:Consequence .
+          ex:2543 onassis:NaturalLanguageExpression “distribution of costs"^^rdfs:Literal .
+          ex:2533 risk:hasConsequence ex:2543 .
+          ex:2543 risk:containedByReactiveControl ex:2544 .
+
+          ex:2544 rdf:type risk:ReactiveControl .
+          ex:2544 onassis:NaturalLanguageExpression “set mitigation deadlines"^^rdfs:Literal .
+          ex:2533 risk:hasReactiveControl ex:2544 .
+          
+          ex:2545 rdf:type risk:Consequence .
+          ex:2545 onassis:NaturalLanguageExpression “buyer higher costs"^^rdfs:Literal .
+          ex:2533 risk:hasConsequence ex:2545 .
+          ex:2545 risk:containedByReactiveControl ex:2546 .
+
+          ex:2546 rdf:type risk:ReactiveControl .
+          ex:2546 onassis:NaturalLanguageExpression “buyer fine due to responsibility"^^rdfs:Literal .
+          ex:2533 risk:hasReactiveControl ex:2546 .
+          
+        ex:2540 rdf:type onassis:Risk
+        ex:2540 onassis:NaturalLanguageExpression “false information"^^rdfs:Literal .
+        ex:2540 risk:involvesHazardousEvent ex:2541 .
+        ex:3 onassis:defines ex:2540 .
+        ex:890 onassis:hasRisk ex:2540 .
+        ex:56789 onassis:hasRisk ex:2540 .
+
+        ex:2541 rdf:type risk:HazardousEvent .
+        ex:2541 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
+        ex:2541 risk:hasProbability ex:2545 .
+        ex:2541 risk:hasImpact ex:2543 .
+        
+        ex:2542 rdf:type risk:Source .
+        ex:2541 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2543 rdf:type risk:Impact .
+        ex:2541 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2543 risk:resultInLevelOfRisk ex:2544 .
+        ex:2543 risk:basedOnSource ex:2542 .
+        ex:2543 risk:affects ex:2
+        
+        ex:2544 rdf:type risk:LevelOfRisk .
+        ex:2541 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2544 risk:isInvolvedInRisk ex:2540 .
+        
+        ex:2545 rdf:type risk:Probability .
+        ex:2541 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2545 risk:resultInLevelOfRisk ex:2544 .
+        ex:2545 risk:basedOnSource ex:2542 .
+        
+          ex:2547 rdf:type risk:Cause .
+          ex:2547 onassis:NaturalLanguageExpression “false information provision"^^rdfs:Literal .
+          ex:2541 risk:hasCause ex:2547 .
+          ex:2549 risk:containedByReactiveControl ex:2548 .
+
+          ex:2548 rdf:type risk:ProactiveControl .
+          ex:2548 onassis:NaturalLanguageExpression “quality control"^^rdfs:Literal .
+          ex:2541 risk:hasProactiveControl ex:2548 .
+          
+          ex:2551 rdf:type risk:Consequence .
+          ex:2551 onassis:NaturalLanguageExpression “distribution of costs"^^rdfs:Literal .
+          ex:2541 risk:hasConsequence ex:2551 .
+          ex:2551 risk:containedByReactiveControl ex:2552 .
+
+          ex:2552 rdf:type risk:ReactiveControl .
+          ex:2552 onassis:NaturalLanguageExpression “extend deadline bilaterally"^^rdfs:Literal .
+          ex:2541 risk:hasReactiveControl ex:2552 .
+          
+          ex:2553 rdf:type risk:Consequence .
+          ex:2553 onassis:NaturalLanguageExpression “buyer higher costs"^^rdfs:Literal .
+          ex:2541 risk:hasConsequence ex:2553 .
+          ex:2553 risk:containedByReactiveControl ex:2554 .
+
+          ex:2554 rdf:type risk:ReactiveControl .
+          ex:2554 onassis:NaturalLanguageExpression “buyer fine due to responsibility"^^rdfs:Literal .
+          ex:2541 risk:hasReactiveControl ex:2554 .
+          
+        ex:2548 rdf:type onassis:Risk
+        ex:2548 onassis:NaturalLanguageExpression “force majeure"^^rdfs:Literal .
+        ex:2548 risk:involvesHazardousEvent ex:2549 .
+        ex:3 onassis:defines ex:2548 .
+        ex:890 onassis:hasRisk ex:2548 .
+        ex:56789 onassis:hasRisk ex:2548 .
+
+        ex:2549 rdf:type risk:HazardousEvent .
+        ex:2549 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
+        ex:2549 risk:hasProbability ex:2553 .
+        ex:2549 risk:hasImpact ex:2551 .
+        
+        ex:2550 rdf:type risk:Source .
+        ex:2549 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        
+        ex:2551 rdf:type risk:Impact .
+        ex:2549 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2551 risk:resultInLevelOfRisk ex:2552 .
+        ex:2551 risk:basedOnSource ex:2550 .
+        ex:2551 risk:affects ex:1
+        
+        ex:2552 rdf:type risk:LevelOfRisk .
+        ex:2549 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2552 risk:isInvolvedInRisk ex:2548 .
+        
+        ex:2553 rdf:type risk:Probability .
+        ex:2549 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2553 risk:resultInLevelOfRisk ex:2552 .
+        ex:2553 risk:basedOnSource ex:2550 .
+        
+          ex:2555 rdf:type risk:Cause .
+          ex:2555 onassis:NaturalLanguageExpression “force majeure interuption"^^rdfs:Literal .
+          ex:2549 risk:hasCause ex:2555 .
+          ex:2557 risk:containedByReactiveControl ex:2556 .
+
+          ex:2556 rdf:type risk:ProactiveControl .
+          ex:2556 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+          ex:2549 risk:hasProactiveControl ex:2556 .
+          
+          ex:2559 rdf:type risk:Consequence .
+          ex:2559 onassis:NaturalLanguageExpression “distribution of costs"^^rdfs:Literal .
+          ex:2549 risk:hasConsequence ex:2559 .
+          ex:2559 risk:containedByReactiveControl ex:2560 .
+
+          ex:2560 rdf:type risk:ReactiveControl .
+          ex:2560 onassis:NaturalLanguageExpression “extend deadline bilaterally"^^rdfs:Literal .
+          ex:2549 risk:hasReactiveControl ex:2560 .
+          
+
+      ex:9000 rdf:type onassis:section.
+      ex:9000 onassis:hasOrderNumber 1.
+      ex:9000 onassis:hasTopic ex:888.
+      ex:888 rdf:type onassis:SectionTopic. 
+      ex:888 onassis:NaturalLanguageExpression “A Scope"^^rdfs:Literal . 
+
+      ex:9000 onassis:isRelatedTo ex:901.
+
+      #paragraph locus 1 in section ex:9000”.  
+
+      ex:901 rdf:type onassis:Paragraph.
+      ex:901 onassis:isRelatedTo ex:9000.
+      ex:901 onassis:hasOrderNumber 1.
+
+      #paragraph expression locus 1 in paragraph ex:901. It reads: “1 The undersigned,”.  
+
+      ex:901 onassis:hasParagraphExpression ex:78.
+      ex:78   rdf:type onassis:ParagraphExpression. 
+      ex:78   onassis:NaturalLanguageExpression “1 The undersigned"^^rdfs:Literal.
+      ex:78  onassis:hasOrderNumber 1.
+
+      #variable locus 2 in paragraph ex:901. [NAME1]
+
+      Ex901 onassis:hasVariable ex:08.
+      ex:08 rdf:type onassis:Variable.
+      ex:08 onassis:hasOrderNumber 2.
+
+      #paragraph expression locus 3 in paragraph ex:901. It reads: “and”.  
+
+      ex:901 onassis:hasParagraphExpression ex:79.
+      ex:79   rdf:type onassis:ParagraphExpression. 
+      ex:79   onassis:NaturalLanguageExpression “and"^^rdfs:Literal.
+      ex:79  onassis:hasOrderNumber 3.
+
+      #variable locus 4 in paragraph ex:901.  [NAME2]
+
+      Ex901 onassis:hasVariable ex:09. 
+      ex:09 rdf:type onassis:Variable.
+      ex:09 onassis:hasOrderNumber 4.
+
+
+      #paragraph expression locus 5 in paragraph ex:901. It reads: “are having discussions regarding the provision of freelance work by”.  
+
+      ex:901 onassis:hasParagraphExpression ex:80.
+      ex:80   rdf:type onassis:ParagraphExpression. 
+      ex:80   onassis:NaturalLanguageExpression “are having discussions regarding the provision of freelance work by "^^rdfs:Literal.
+      ex:80  onassis:hasOrderNumber 5.
+
+      #variable locus 6 in paragraph ex:901.  [NAME1]
+
+      Ex901 onassis:hasVariable ex:08.
+      ex:08 onassis:hasOrderNumber 6.
+
+      #paragraph expression locus 7 in paragraph ex:901. It reads: “to”.  
+
+      ex:901 onassis:hasParagraphExpression ex:81.
+      ex:81  rdf:type onassis:ParagraphExpression. 
+      ex:81   onassis:NaturalLanguageExpression “to"^^rdfs:Literal.
+      ex:81 onassis:hasOrderNumber 7.
+
+      #variable locus 8 in paragraph ex:901. [NAME2]
+      Ex901 onassis:hasVariable ex:09.
+      ex:09 onassis:hasOrderNumber 8.
+
+      #section locus 2 and section topic “B MILESTONES”.  
+
+      ex:9001 rdf:type onassis:section.
+      ex:9001 onassis:hasOrderNumber 2.
+      ex:9001 onassis:hasTopic ex:889.
+      ex:889 rdf:type onassis:SectionTopic. 
+      ex:889 onassis:NaturalLanguageExpression “B MILESTONES"^^rdfs:Literal . 
+      ex:9001 onassis:isRelatedTo ex:902.
+
+      #paragraph locus 1 in section ex:9001”.  
+
+      ex:902 rdf:type onassis:Paragraph.
+      ex:902 onassis:isRelatedTo ex:9001.
+      ex:902 onassis:hasOrderNumber 1.
+
+      #paragraph expression locus 1 in paragraph ex:902. It reads: “1”.  
+
+      ex:902 onassis:hasParagraphExpression ex:200.
+      ex:200   rdf:type onassis:ParagraphExpression. 
+      ex:200   onassis:NaturalLanguageExpression “1"^^rdfs:Literal.
+      ex:200  onassis:hasOrderNumber 1.
+
+      #variable locus 2 in paragraph ex:902. [NAME1]
+      Ex902 onassis:hasVariable ex:08.
+      ex:08 onassis:hasOrderNumber 2.
+
+      #paragraph expression locus 3 in paragraph ex:902. It reads: “and”.  
+
+      ex:902 onassis:hasParagraphExpression ex:201.
+      ex:201   rdf:type onassis:ParagraphExpression. 
+      ex:201   onassis:NaturalLanguageExpression “and"^^rdfs:Literal.
+      ex:201  onassis:hasOrderNumber 3.
+
+      #variable locus 4 in paragraph ex:902. [NAME2]
+      Ex902 onassis:hasVariable ex:09.
+      ex:09 onassis:hasOrderNumber 4.
+
+      #paragraph expression locus 5 in paragraph ex:902. It reads: “agree to schedule payments based on the following milestone plan:”.  
+
+      ex:902 onassis:hasParagraphExpression ex:202.
+      ex:202   rdf:type onassis:ParagraphExpression. 
+      ex:202   onassis:NaturalLanguageExpression “agree to schedule payments based on the following milestone plan: "^^rdfs:Literal.
+      ex:202  onassis:hasOrderNumber 5.
+
+      #variable locus 6 in paragraph ex:902. [MILESTONES]
+      Ex902 onassis:hasVariable ex:14.
+      ex:14 rdf:type onassis:Variable.
+      ex:14 onassis:hasOrderNumber 6.
+
+      #variable locus 7 in paragraph ex:902.  [DEADLINES] 
+      Ex902 onassis:hasVariable ex:15.
+      ex:15 rdf:type onassis:Variable.
+      ex:15 onassis:hasOrderNumber 7.
+
+
+      #section locus 3 and section topic “C Payment”.  
+
+      ex:9002 rdf:type onassis:section.
+      ex:9002 onassis:hasOrderNumber 3.
+      ex:9002 onassis:hasTopic ex:7000.
+      ex:7000 rdf:type onassis:SectionTopic. 
+      ex:7000 onassis:NaturalLanguageExpression “C PAYMENT"^^rdfs:Literal . 
+      ex:9002 onassis:isRelatedTo ex:600.
+      ex:9002 onassis:isRelatedTo ex:601.
+      ex:9002 onassis:isRelatedTo ex:602.
+      ex:9002 onassis:isRelatedTo ex:603.
+
+      #paragraph locus 1 in section ex:9002”.  
+
+      ex:600 rdf:type onassis:Paragraph.
+      ex:600 onassis:isRelatedTo ex:9002.
+      ex:600 onassis:hasOrderNumber 1.
+
+      #paragraph expression locus 1 in paragraph ex:600. It reads: “1 The total budget is”.  
+
+      ex:600 onassis:hasParagraphExpression ex:50.
+      ex:50   rdf:type onassis:ParagraphExpression. 
+      ex:50   onassis:NaturalLanguageExpression “1 The total budget is "^^rdfs:Literal.
+      ex:50  onassis:hasOrderNumber 1.
+
+      #variable locus 2 in paragraph ex:600. [amount] 
+      ex:600 onassis:hasVariable ex:16.
+      ex:16 rdf:type onassis:Variable.
+      ex:16 onassis:hasOrderNumber 2.
+
+      #paragraph expression locus 3 in paragraph ex:600. It reads: “and the payment method is”.  
+      ex:600 onassis:hasParagraphExpression ex:51.
+      ex:51   rdf:type onassis:ParagraphExpression. 
+      ex:51   onassis:NaturalLanguageExpression “and the payment method is "^^rdfs:Literal.
+      ex:51  onassis:hasOrderNumber 3.
+
+      #variable locus 4 in paragraph ex:600. [x]
+      ex:600 onassis:hasVariable ex:17.
+      ex:17 rdf:type onassis:Variable.
+      ex:17 onassis:hasOrderNumber 4.
+
+
+      #paragraph locus 2 in section ex:9002”.  
+
+      ex:601 rdf:type onassis:Paragraph.
+      ex:601 onassis:isRelatedTo ex:9002.
+      ex:601 onassis:hasOrderNumber 2.
+
+      #paragraph expression locus 1 in paragraph ex:601. It reads: “2 On the deadline of each milestone the”.  
+
+      ex:601 onassis:hasParagraphExpression ex:40.
+      ex:40   rdf:type onassis:ParagraphExpression. 
+      ex:40   onassis:NaturalLanguageExpression “2 On the deadline of each milestone the "^^rdfs:Literal.
+      ex:40  onassis:hasOrderNumber 1.
+
+      #variable locus 2 in paragraph ex:601.  [NAME2] 
+      Ex601 onassis:hasVariable ex:09.
+      ex:09 onassis:hasOrderNumber 2.
+
+
+      #paragraph expression locus 3 in paragraph ex:601. It reads: “2 On the deadline of each milestone the”.  
+
+      ex:601 onassis:hasParagraphExpression ex:41.
+      ex:41   rdf:type onassis:ParagraphExpression. 
+      ex:41   onassis:NaturalLanguageExpression “will examine the quality of “^^rdfs:Literal.
+      ex:41  onassis:hasOrderNumber 3.
+
+      #variable locus 4 in paragraph ex:601. [NAME1] 
+      Ex601 onassis:hasVariable ex:08.
+      ex:08 onassis:hasOrderNumber 4.
+
+
+      #paragraph expression locus 5 in paragraph ex:601. It reads: “services and only if the quality is sufficient comply with payment obligation.”.  
+
+      ex:601 onassis:hasParagraphExpression ex:42.
+      ex:42   rdf:type onassis:ParagraphExpression. 
+      ex:42   onassis:NaturalLanguageExpression “services and only if the quality is sufficient comply with payment obligation.  “^^rdfs:Literal.
+      ex:42  onassis:hasOrderNumber 5.
+
+      #paragraph locus 3 in section ex:9002”.  
+      ex:602 rdf:type onassis:Paragraph.
+      ex:602 onassis:isRelatedTo ex:9002.
+      ex:602 onassis:hasOrderNumber 3.
+
+      #paragraph expression locus 1 in paragraph ex:602. It reads: “3 The”.  
+
+      ex:602 onassis:hasParagraphExpression ex:30.
+      ex:30   rdf:type onassis:ParagraphExpression. 
+      ex:30   onassis:NaturalLanguageExpression “the "^^rdfs:Literal.
+      ex:30  onassis:hasOrderNumber 1.
+
+      #variable locus 2 in paragraph ex:602.  [NAME1] 
+      Ex602 onassis:hasVariable ex:08.
+      ex:08 onassis:hasOrderNumber 2.
+
+      #paragraph expression locus 3 in paragraph ex:602. It reads: “has no obligation to deliver the services if any payment is not completed.”.  
+
+      ex:602 onassis:hasParagraphExpression ex:31.
+      ex:31   rdf:type onassis:ParagraphExpression. 
+      ex:31   onassis:NaturalLanguageExpression “has no obligation to deliver the services if any payment is not completed. "^^rdfs:Literal.
+      ex:31  onassis:hasOrderNumber 1.
+
+
+      #paragraph locus 4 in section ex:9002”.  
+      ex:603 rdf:type onassis:Paragraph.
+      ex:603 onassis:isRelatedTo ex:9002.
+      ex:603 onassis:hasOrderNumber 1.
+
+
+      #paragraph expression locus 1 in paragraph ex:603. It reads: “4 Refund is not possible.” 
+
+      ex:603 onassis:hasParagraphExpression ex:32.
+      ex:32   rdf:type onassis:ParagraphExpression. 
+      ex:32   onassis:NaturalLanguageExpression “4 Refund is not possible."^^rdfs:Literal.
+      ex:32  onassis:hasOrderNumber 1.
+
+      #section locus 4 and section topic “D Signature”.  
+
+      ex:9003 rdf:type onassis:section.
+      ex:9003 onassis:hasOrderNumber 1.
+      ex:9003 onassis:hasTopic ex:777.
+      ex:777 rdf:type onassis:SectionTopic. 
+      ex:777 onassis:NaturalLanguageExpression “D Signature"^^rdfs:Literal . 
