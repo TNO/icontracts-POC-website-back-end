@@ -10,7 +10,7 @@
       @prefix ex: <http://ontology.tno.nl/onassis/data#> .
 
       ex:890 rdf:type onassis:Contract . 
-      ex:890 onassis:contractID “undefined"^^rdfs:Literal .             
+      ex:890 onassis:contractID “100"^^rdfs:Literal .             
 
       ex:890 onassis:involvesScope ex:5678 . 
       ex:5678 rdf:type onassis:Scope . 
