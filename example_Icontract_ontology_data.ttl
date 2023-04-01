@@ -16,8 +16,8 @@
       ex:5678 rdf:type onassis:Scope . 
       ex:5678 onassis:NaturalLanguageExpression “Freelance Agreement"^^rdfs:Literal .
 
-      ex:890 onassis:AgreementInContract ex:56789 . 
-      ex:56789 rdf:type onassis:Agreement . 
+      ex:890 onassis:AgreementInContract ex:678 . 
+      ex:678 rdf:type onassis:Agreement . 
 
       #connect contract to sections paragraphs and variables
       ex:890 onassis:isRelatedTo ex:9000 .
@@ -31,7 +31,7 @@
       ex:1 rdf:type onassis:Contractor . 
       ex:1 foaf:name “contractorName1 "^^rdfs:Literal .
       ex:1 onassis:NaturalLanguageExpression “client"^^rdfs:Literal .
-      ex:56789 onassis:involvesParties ex:1 . 
+      ex:678 onassis:involvesParties ex:1 . 
       ex:1 onassis:selectsScope ex:5678 .
       ex:123 onassis:signatureBelongingTo ex:1
       
@@ -39,13 +39,13 @@
       ex:2 rdf:type onassis:Contractor . 
       ex:2 foaf:name “contractorName"^^rdfs:Literal .
       ex:2 onassis:NaturalLanguageExpression “freelancer"^^rdfs:Literal .
-      ex:56789 onassis:involvesParties ex:2 . 
+      ex:678 onassis:involvesParties ex:2 . 
       ex:1 onassis:selectsScope ex:5678 .
       ex:123 signatureBelongingTo ex:2
 
       ex:3 rdf:type onassis:LegalExpert . 
       ex:3 foaf:name “LegalPersonName"^^rdfs:Literal .
-      ex:56789 onassis:involvesParties ex:3 . 
+      ex:678 onassis:involvesParties ex:3 . 
       #defines contract
       ex:3 onassis:defines ex:890 .
       #defines scope
@@ -75,18 +75,18 @@
       ex:1 onassis:replies ex:140 .
       ex:2 onassis:replies ex:140 .
       ex:3 onassis:writes ex:140 .
-      ex:56789 onassis:agreementInvolvedIn ex:140 .     
+      ex:678 onassis:agreementInvolvedIn ex:140 .     
       ex:140 onassis:hasAnswer ex:142 .
       ex:140 onassis:hasAnswer ex:143 .
 
       ex:142 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:142 . 
+      ex:678 onassis:agreementInvolvedIn ex:142 . 
       ex:142 onassis:answerContainedIn ex:141
       ex:142 onassis:answerProvidedBy ex:1
       ex:142 onassis:NaturalLanguageExpression “Information gathering,Draft design selection"^^rdfs:Literal .
 
       ex:143 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:143 . 
+      ex:678 onassis:agreementInvolvedIn ex:143 . 
       ex:143 onassis:answerContainedIn ex:141
       ex:143 onassis:answerProvidedBy ex:2
       ex:143 onassis:NaturalLanguageExpression “Draft design selection,1st Draft delivery"^^rdfs:Literal .
@@ -97,18 +97,18 @@
       ex:1 onassis:replies ex:150 .
       ex:2 onassis:replies ex:150 .
       ex:3 onassis:writes ex:150 .
-      ex:56789 onassis:agreementInvolvedIn ex:150 .     
+      ex:678 onassis:agreementInvolvedIn ex:150 .     
       ex:150 onassis:hasAnswer ex:152 .
       ex:150 onassis:hasAnswer ex:153 .
 
       ex:152 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:152 . 
+      ex:678 onassis:agreementInvolvedIn ex:152 . 
       ex:152 onassis:answerContainedIn ex:151
       ex:152 onassis:answerProvidedBy ex:1
       ex:152 onassis:NaturalLanguageExpression “Milestone payment"^^rdfs:Literal .
 
       ex:153 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:153 . 
+      ex:678 onassis:agreementInvolvedIn ex:153 . 
       ex:153 onassis:answerContainedIn ex:151
       ex:153 onassis:answerProvidedBy ex:2
       ex:153 onassis:NaturalLanguageExpression “Final payment"^^rdfs:Literal .
@@ -119,18 +119,18 @@
       ex:1 onassis:replies ex:160 .
       ex:2 onassis:replies ex:160 .
       ex:3 onassis:writes ex:160 .
-      ex:56789 onassis:agreementInvolvedIn ex:160 .     
+      ex:678 onassis:agreementInvolvedIn ex:160 .     
       ex:160 onassis:hasAnswer ex:162 .
       ex:160 onassis:hasAnswer ex:163 .
 
       ex:162 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:162 . 
+      ex:678 onassis:agreementInvolvedIn ex:162 . 
       ex:162 onassis:answerContainedIn ex:161
       ex:162 onassis:answerProvidedBy ex:1
       ex:162 onassis:NaturalLanguageExpression “2500-3000"^^rdfs:Literal .
 
       ex:163 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:163 . 
+      ex:678 onassis:agreementInvolvedIn ex:163 . 
       ex:163 onassis:answerContainedIn ex:161
       ex:163 onassis:answerProvidedBy ex:2
       ex:163 onassis:NaturalLanguageExpression “2500-3000"^^rdfs:Literal .
@@ -141,18 +141,18 @@
       ex:1 onassis:replies ex:170 .
       ex:2 onassis:replies ex:170 .
       ex:3 onassis:writes ex:170 .
-      ex:56789 onassis:agreementInvolvedIn ex:170 .     
+      ex:678 onassis:agreementInvolvedIn ex:170 .     
       ex:170 onassis:hasAnswer ex:172 .
       ex:170 onassis:hasAnswer ex:173 .
 
       ex:172 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:172 . 
+      ex:678 onassis:agreementInvolvedIn ex:172 . 
       ex:172 onassis:answerContainedIn ex:171
       ex:172 onassis:answerProvidedBy ex:1
       ex:172 onassis:NaturalLanguageExpression “Cash"^^rdfs:Literal .
 
       ex:173 rdf:type onassis:Answer .
-      ex:56789 onassis:agreementInvolvedIn ex:173 . 
+      ex:678 onassis:agreementInvolvedIn ex:173 . 
       ex:173 onassis:answerContainedIn ex:171
       ex:173 onassis:answerProvidedBy ex:2
       ex:173 onassis:NaturalLanguageExpression “Bitcoin"^^rdfs:Literal .
@@ -164,11 +164,11 @@
         ex:1800 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1800 .
         ex:3 onassis:writes ex:1800 .
-        ex:56789 onassis:agreementInvolvedIn ex:1800 .     
+        ex:678 onassis:agreementInvolvedIn ex:1800 .     
         ex:1800 onassis:hasAnswer ex:1801 .
 
         ex:1801 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1801 . 
+        ex:678 onassis:agreementInvolvedIn ex:1801 . 
         ex:1801 onassis:NaturalLanguageExpression “ no tienk"^^rdfs:Literal .
         ex:1801 onassis:answerProvidedBy ex:2 . 
           ex:2 onassis:replies ex:1800 .
@@ -179,11 +179,11 @@
         ex:1801 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1801 .
         ex:3 onassis:writes ex:1801 .
-        ex:56789 onassis:agreementInvolvedIn ex:1801 .     
+        ex:678 onassis:agreementInvolvedIn ex:1801 .     
         ex:1801 onassis:hasAnswer ex:1802 .
 
         ex:1802 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1802 . 
+        ex:678 onassis:agreementInvolvedIn ex:1802 . 
         ex:1802 onassis:NaturalLanguageExpression “undefined"^^rdfs:Literal .
         ex:1802 onassis:answerProvidedBy ex:2 . 
           ex:2 onassis:replies ex:1801 .
@@ -194,11 +194,11 @@
         ex:1802 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1802 .
         ex:3 onassis:writes ex:1802 .
-        ex:56789 onassis:agreementInvolvedIn ex:1802 .     
+        ex:678 onassis:agreementInvolvedIn ex:1802 .     
         ex:1802 onassis:hasAnswer ex:1803 .
 
         ex:1803 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1803 . 
+        ex:678 onassis:agreementInvolvedIn ex:1803 . 
         ex:1803 onassis:NaturalLanguageExpression “best"^^rdfs:Literal .
         ex:1803 onassis:answerProvidedBy ex:1 . 
           ex:1 onassis:replies ex:1802 .
@@ -209,11 +209,11 @@
         ex:1803 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1803 .
         ex:3 onassis:writes ex:1803 .
-        ex:56789 onassis:agreementInvolvedIn ex:1803 .     
+        ex:678 onassis:agreementInvolvedIn ex:1803 .     
         ex:1803 onassis:hasAnswer ex:1804 .
 
         ex:1804 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1804 . 
+        ex:678 onassis:agreementInvolvedIn ex:1804 . 
         ex:1804 onassis:NaturalLanguageExpression “YAAAA"^^rdfs:Literal .
         ex:1804 onassis:answerProvidedBy ex:2 . 
           ex:2 onassis:replies ex:1803 .
@@ -224,11 +224,11 @@
         ex:1804 onassis:NaturalLanguageExpression “test "^^rdfs:Literal .
         ex:2 onassis:replies ex:1804 .
         ex:3 onassis:writes ex:1804 .
-        ex:56789 onassis:agreementInvolvedIn ex:1804 .     
+        ex:678 onassis:agreementInvolvedIn ex:1804 .     
         ex:1804 onassis:hasAnswer ex:1805 .
 
         ex:1805 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1805 . 
+        ex:678 onassis:agreementInvolvedIn ex:1805 . 
         ex:1805 onassis:NaturalLanguageExpression “yes"^^rdfs:Literal .
         ex:1805 onassis:answerProvidedBy ex:1 . 
           ex:1 onassis:replies ex:1804 .
@@ -239,11 +239,11 @@
         ex:1805 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1805 .
         ex:3 onassis:writes ex:1805 .
-        ex:56789 onassis:agreementInvolvedIn ex:1805 .     
+        ex:678 onassis:agreementInvolvedIn ex:1805 .     
         ex:1805 onassis:hasAnswer ex:1806 .
 
         ex:1806 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1806 . 
+        ex:678 onassis:agreementInvolvedIn ex:1806 . 
         ex:1806 onassis:NaturalLanguageExpression “nothienk"^^rdfs:Literal .
         ex:1806 onassis:answerProvidedBy ex:1 . 
           ex:1 onassis:replies ex:1805 .
@@ -254,70 +254,70 @@
         ex:1806 onassis:NaturalLanguageExpression “what is problem?"^^rdfs:Literal .
         ex:2 onassis:replies ex:1806 .
         ex:3 onassis:writes ex:1806 .
-        ex:56789 onassis:agreementInvolvedIn ex:1806 .     
+        ex:678 onassis:agreementInvolvedIn ex:1806 .     
         ex:1806 onassis:hasAnswer ex:1807 .
 
         ex:1807 rdf:type onassis:Answer .
-        ex:56789 onassis:agreementInvolvedIn ex:1807 . 
+        ex:678 onassis:agreementInvolvedIn ex:1807 . 
         ex:1807 onassis:NaturalLanguageExpression “Neee!"^^rdfs:Literal .
         ex:1807 onassis:answerProvidedBy ex:1 . 
           ex:1 onassis:replies ex:1806 .
           
-        ex:2500 rdf:type onassis:Risk
-        ex:2500 onassis:NaturalLanguageExpression “budget"^^rdfs:Literal .
-        ex:2500 risk:involvesHazardousEvent ex:2501 .
-        ex:3 onassis:defines ex:2500 .
-        ex:890 onassis:hasRisk ex:2500 .
-        ex:56789 onassis:hasRisk ex:2500 .
+        ex:250 rdf:type onassis:Risk
+        ex:250 onassis:NaturalLanguageExpression “budget"^^rdfs:Literal .
+        ex:250 risk:involvesHazardousEvent ex:251 .
+        ex:3 onassis:defines ex:250 .
+        ex:890 onassis:hasRisk ex:250 .
+        ex:678 onassis:hasRisk ex:250 .
 
-        ex:2501 rdf:type risk:HazardousEvent .
-        ex:2501 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
-        ex:2501 risk:hasProbability ex:2505 .
-        ex:2501 risk:hasImpact ex:2503 .
+        ex:251 rdf:type risk:HazardousEvent .
+        ex:251 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
+        ex:251 risk:hasProbability ex:2505 .
+        ex:251 risk:hasImpact ex:2503 .
         
         ex:2502 rdf:type risk:Source .
-        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:251 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
         
         ex:2503 rdf:type risk:Impact .
-        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:251 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
         ex:2503 risk:resultInLevelOfRisk ex:2504 .
         ex:2503 risk:basedOnSource ex:2502 .
         ex:2503 risk:affects ex:1
           ex:2503 risk:affects ex:2
         
         ex:2504 rdf:type risk:LevelOfRisk .
-        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
-        ex:2504 risk:isInvolvedInRisk ex:2500 .
+        ex:251 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:2504 risk:isInvolvedInRisk ex:250 .
         
         ex:2505 rdf:type risk:Probability .
-        ex:2501 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
+        ex:251 onassis:NaturalLanguageExpression “"^^rdfs:Literal .
         ex:2505 risk:resultInLevelOfRisk ex:2504 .
         ex:2505 risk:basedOnSource ex:2502 .
         
           ex:2507 rdf:type risk:Cause .
           ex:2507 onassis:NaturalLanguageExpression “lack of budget"^^rdfs:Literal .
-          ex:2501 risk:hasCause ex:2507 .
+          ex:251 risk:hasCause ex:2507 .
           ex:2509 risk:containedByReactiveControl ex:2508 .
 
           ex:2508 rdf:type risk:ProactiveControl .
           ex:2508 onassis:NaturalLanguageExpression “budget screenshot"^^rdfs:Literal .
-          ex:2501 risk:hasProactiveControl ex:2508 .
+          ex:251 risk:hasProactiveControl ex:2508 .
           
           ex:2511 rdf:type risk:Consequence .
           ex:2511 onassis:NaturalLanguageExpression “less work, less money"^^rdfs:Literal .
-          ex:2501 risk:hasConsequence ex:2511 .
+          ex:251 risk:hasConsequence ex:2511 .
           ex:2511 risk:containedByReactiveControl ex:2512 .
 
           ex:2512 rdf:type risk:ReactiveControl .
           ex:2512 onassis:NaturalLanguageExpression “stop services"^^rdfs:Literal .
-          ex:2501 risk:hasReactiveControl ex:2512 .
+          ex:251 risk:hasReactiveControl ex:2512 .
           
         ex:2506 rdf:type onassis:Risk
         ex:2506 onassis:NaturalLanguageExpression “payment"^^rdfs:Literal .
         ex:2506 risk:involvesHazardousEvent ex:2507 .
         ex:3 onassis:defines ex:2506 .
         ex:890 onassis:hasRisk ex:2506 .
-        ex:56789 onassis:hasRisk ex:2506 .
+        ex:678 onassis:hasRisk ex:2506 .
 
         ex:2507 rdf:type risk:HazardousEvent .
         ex:2507 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
@@ -365,7 +365,7 @@
         ex:2512 risk:involvesHazardousEvent ex:2513 .
         ex:3 onassis:defines ex:2512 .
         ex:890 onassis:hasRisk ex:2512 .
-        ex:56789 onassis:hasRisk ex:2512 .
+        ex:678 onassis:hasRisk ex:2512 .
 
         ex:2513 rdf:type risk:HazardousEvent .
         ex:2513 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
@@ -414,7 +414,7 @@
         ex:2518 risk:involvesHazardousEvent ex:2519 .
         ex:3 onassis:defines ex:2518 .
         ex:890 onassis:hasRisk ex:2518 .
-        ex:56789 onassis:hasRisk ex:2518 .
+        ex:678 onassis:hasRisk ex:2518 .
 
         ex:2519 rdf:type risk:HazardousEvent .
         ex:2519 onassis:NaturalLanguageExpression “no payment"^^rdfs:Literal .
@@ -462,7 +462,7 @@
         ex:2524 risk:involvesHazardousEvent ex:2525 .
         ex:3 onassis:defines ex:2524 .
         ex:890 onassis:hasRisk ex:2524 .
-        ex:56789 onassis:hasRisk ex:2524 .
+        ex:678 onassis:hasRisk ex:2524 .
 
         ex:2525 rdf:type risk:HazardousEvent .
         ex:2525 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
@@ -519,7 +519,7 @@
         ex:2532 risk:involvesHazardousEvent ex:2533 .
         ex:3 onassis:defines ex:2532 .
         ex:890 onassis:hasRisk ex:2532 .
-        ex:56789 onassis:hasRisk ex:2532 .
+        ex:678 onassis:hasRisk ex:2532 .
 
         ex:2533 rdf:type risk:HazardousEvent .
         ex:2533 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
@@ -576,7 +576,7 @@
         ex:2540 risk:involvesHazardousEvent ex:2541 .
         ex:3 onassis:defines ex:2540 .
         ex:890 onassis:hasRisk ex:2540 .
-        ex:56789 onassis:hasRisk ex:2540 .
+        ex:678 onassis:hasRisk ex:2540 .
 
         ex:2541 rdf:type risk:HazardousEvent .
         ex:2541 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
@@ -633,7 +633,7 @@
         ex:2548 risk:involvesHazardousEvent ex:2549 .
         ex:3 onassis:defines ex:2548 .
         ex:890 onassis:hasRisk ex:2548 .
-        ex:56789 onassis:hasRisk ex:2548 .
+        ex:678 onassis:hasRisk ex:2548 .
 
         ex:2549 rdf:type risk:HazardousEvent .
         ex:2549 onassis:NaturalLanguageExpression “exceeded deadline"^^rdfs:Literal .
